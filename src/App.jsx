@@ -1,14 +1,18 @@
 import React from 'react';
+import 'antd/dist/antd.css';
+import { Table } from 'antd';
 import logo from './logo.svg';
 import './App.css';
+import { expenses } from './expenses';
 
 function App() {
+  console.log(expenses)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload bbb.
         </p>
         <a
           className="App-link"
