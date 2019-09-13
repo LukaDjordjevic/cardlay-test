@@ -8,6 +8,7 @@ class ExpensesTable extends Component {
 
     this.state = {
       currentPage: 1,
+      sortInfo: {},
     }
 
     this.dataSource = expenses.map((item) => {
@@ -16,7 +17,16 @@ class ExpensesTable extends Component {
       return newItem
     })
 
-    this.columns = [
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(sorter) {
+    this.setState({ sortInfo: sorter })
+  }
+
+  render() {
+    const { sortInfo } = this.state
+    const columns = [
       {
         title: 'DATE',
         dataIndex: 'date',
@@ -24,14 +34,20 @@ class ExpensesTable extends Component {
       {
         title: 'MERCHANT',
         dataIndex: 'merchant',
+        sorter: (a, b) => a.merchant.localeCompare(b.merchant),
+        sortOrder: sortInfo.columnKey === 'merchant' && sortInfo.order,
       },
       {
         title: 'CATEGORY',
         dataIndex: 'categoryName',
+        sorter: (a, b) => a.categoryName.localeCompare(b.categoryName),
+        sortOrder: sortInfo.columnKey === 'categoryName' && sortInfo.order,
       },
       {
         title: 'AMOUNT',
         dataIndex: 'amount',
+        sorter: (a, b) => a.amount - b.amount,
+        sortOrder: sortInfo.columnKey === 'amount' && sortInfo.order,
       },
       {
         title: 'CURRENCY',
@@ -42,9 +58,6 @@ class ExpensesTable extends Component {
         dataIndex: 'status',
       },
     ]
-  }
-
-  render() {
     const { currentPage } = this.state
     return (
       <div>
@@ -53,8 +66,9 @@ class ExpensesTable extends Component {
         <Table
           rowKey="id"
           dataSource={this.dataSource}
-          columns={this.columns}
+          columns={columns}
           pagination={{ pageSize: 10 }}
+          onChange={this.handleChange}
         />
       </div>
     )
