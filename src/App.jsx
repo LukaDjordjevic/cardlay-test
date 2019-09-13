@@ -1,30 +1,16 @@
-import React from 'react';
-import 'antd/dist/antd.css';
-import { Table } from 'antd';
-import logo from './logo.svg';
-import './App.css';
-import { expenses } from './expenses';
+import React from 'react'
+import 'antd/dist/antd.css'
+import ExpensesTable from './containers/ExpensesTable'
+import './App.css'
+
 
 function App() {
-  console.log(expenses)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload bbb.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      123
+      <ExpensesTable />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
