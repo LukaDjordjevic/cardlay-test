@@ -288,3 +288,5 @@ export const expenses =
     }
   },
 ]
+
+export const categories = ['Transport', 'Food', 'Car Rental', 'Petrol & Services', 'Hotel & Accomodation', 'Parking']
