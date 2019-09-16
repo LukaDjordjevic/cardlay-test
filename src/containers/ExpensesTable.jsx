@@ -57,6 +57,11 @@ class ExpensesTable extends Component {
       {
         title: 'DATE',
         dataIndex: 'date',
+        render: (text) => {
+          const date = new Date(text)
+          console.log('date', date)
+          return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+        },
       },
       {
         title: 'MERCHANT',
