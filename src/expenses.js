@@ -1,5 +1,5 @@
-export const expenses =
-  [{
+export const expenses = [
+  {
     id: "1fc7f8213",
     date: "2019-08-12T09:18:30Z",
     amount: 1324.00,
@@ -9,7 +9,7 @@ export const expenses =
     parentId: null,
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "2f14f448",
@@ -21,7 +21,7 @@ export const expenses =
     parentId: null,
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "3333ea42b3db09f",
@@ -33,7 +33,7 @@ export const expenses =
     categoryName: "Transport",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "4993a42b3db09f",
@@ -45,7 +45,7 @@ export const expenses =
     categoryName: "Car Rental",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "5f2b3db09f",
@@ -57,7 +57,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "614fb3db09f",
@@ -69,7 +69,7 @@ export const expenses =
     categoryName: "Hotel & Accomodation",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "7fc7f892b3db09f",
@@ -81,7 +81,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "8fc7b09f",
@@ -93,7 +93,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "9fc77ea42b3db09f",
@@ -105,7 +105,7 @@ export const expenses =
     categoryName: "Car Rental",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "10fc7fb3db09f",
@@ -117,7 +117,7 @@ export const expenses =
     categoryName: "Transport",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "11fc7f82133db09f",
@@ -129,7 +129,7 @@ export const expenses =
     categoryName: "Hotel & Accomodation",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "12fca42b3db09f",
@@ -141,7 +141,7 @@ export const expenses =
     categoryName: "Parking",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "13a42b3db09f2",
@@ -153,7 +153,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "142b3db09f",
@@ -165,7 +165,7 @@ export const expenses =
     parentId: null,
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "152b3db09f",
@@ -177,7 +177,7 @@ export const expenses =
     parentId: null,
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "16a42b3db09f1",
@@ -189,9 +189,9 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
-    {
+  {
     id: "17fc7f892b3db09f",
     date: "2019-08-11T09:18:30Z",
     amount: 100,
@@ -201,7 +201,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "18fc7b09f",
@@ -213,7 +213,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "19fc77ea42b3db09f",
@@ -225,7 +225,7 @@ export const expenses =
     categoryName: "Car Rental",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "20fc7fb3db09f",
@@ -237,7 +237,7 @@ export const expenses =
     categoryName: "Transport",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "21abc3db09f",
@@ -249,7 +249,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "22fc7b09f233",
@@ -261,7 +261,7 @@ export const expenses =
     categoryName: "Food",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "23abe232333",
@@ -273,7 +273,7 @@ export const expenses =
     categoryName: "Car Rental",
     status: {
       stage: "Submitted"
-    }
+    },
   },
   {
     id: "24asdsds211ab",
@@ -285,8 +285,15 @@ export const expenses =
     categoryName: "Transport",
     status: {
       stage: "Submitted"
-    }
+    },
   },
 ]
 
-export const categories = ['Transport', 'Food', 'Car Rental', 'Petrol & Services', 'Hotel & Accomodation', 'Parking']
+export const categories = [
+  'Transport',
+  'Food',
+  'Car Rental',
+  'Petrol & Services',
+  'Hotel & Accomodation',
+  'Parking',
+]

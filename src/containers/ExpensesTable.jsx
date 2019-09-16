@@ -6,7 +6,15 @@ class ExpensesTable extends Component {
   constructor(props) {
     super(props)
 
-    let dataSource = expenses.map((item) => {
+    // let dataSource = expenses.map((item) => {
+    //   const newItem = { ...item }
+    //   newItem.status = item.status.stage
+    //   return newItem
+    // })
+
+    const savedExpenses = localStorage.expenseRecords ? JSON.parse(localStorage.expenseRecords) : null
+
+    const dataSource = savedExpenses || expenses.map((item) => {
       const newItem = { ...item }
       newItem.status = item.status.stage
       return newItem
@@ -26,6 +34,19 @@ class ExpensesTable extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.onChangeCategory = this.onChangeCategory.bind(this)
+  }
+
+  onChangeCategory(value, id) {
+    const { dataSource } = this.state
+    const expenseRecord = dataSource.find((record) => record.id === id)
+    expenseRecord.categoryName = value
+    dataSource.findIndex((record) => record.id === id)
+    const updatedExpenses = dataSource.map((record) => ({ ...record }))
+    updatedExpenses[dataSource.findIndex((record) => record.id === id)] = expenseRecord
+    this.setState({ dataSource: updatedExpenses })
+    localStorage.expenseRecords = JSON.stringify(updatedExpenses)
+    console.log(value)
   }
 
   handleChange(pagination, filters, sorter) {
@@ -60,7 +81,7 @@ class ExpensesTable extends Component {
           console.log(text, record, index)
           const options = categories.map((category) => <Option key={category} value={category}>{category}</Option>)
           return (
-            <Select defaultValue={text} style={{ width: 180 }}>
+            <Select defaultValue={text} style={{ width: 180 }} onChange={(value) => this.onChangeCategory(value, record.id)}>
               {options}
             </Select>
           )
