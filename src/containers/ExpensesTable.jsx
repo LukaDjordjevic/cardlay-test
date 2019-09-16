@@ -30,11 +30,23 @@ class ExpensesTable extends Component {
     // this.onChangeRecord = this.onChangeRecord.bind(this)
   }
 
-  onChangeRecord(column, value, id, element) {
-    console.log(column, value, id, element, this)
+  componentDidMount() {
+  }
+
+  onChangeRecord(column, value, id, element, originalValue) {
+    console.log(column, value, id, element, originalValue)
+    let allowUpdate = true
+    switch(column) {
+      case 'amount':
+        allowUpdate = /^\d+(.\d+)?$/.test(value)
+        break
+      default:
+    }
     const { dataSource } = this.state
     const expenseRecord = dataSource.find((record) => record.id === id)
-    expenseRecord[column] = value
+    const newValue = allowUpdate ? value : originalValue
+    expenseRecord[column] = newValue
+    if (element) element.setState({ value: newValue })
     dataSource.findIndex((record) => record.id === id)
     const updatedExpenses = dataSource.map((record) => ({ ...record }))
     updatedExpenses[dataSource.findIndex((record) => record.id === id)] = expenseRecord
@@ -59,7 +71,6 @@ class ExpensesTable extends Component {
         dataIndex: 'date',
         render: (text) => {
           const date = new Date(text)
-          console.log('date', date)
           return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
         },
       },
@@ -68,8 +79,8 @@ class ExpensesTable extends Component {
         dataIndex: 'merchant',
         sorter: (a, b) => a.merchant.localeCompare(b.merchant),
         sortOrder: sortInfo.columnKey === 'merchant' && sortInfo.order,
-        render: (text, record) => (
-          <Input defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, e.target)} />
+        render: (text, record, index) => (
+          <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
         ),
       },
       {
@@ -91,15 +102,15 @@ class ExpensesTable extends Component {
         dataIndex: 'amount',
         sorter: (a, b) => a.amount - b.amount,
         sortOrder: sortInfo.columnKey === 'amount' && sortInfo.order,
-        render: (text, record) => (
-          <Input defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.onChangeRecord('amount', e.target.value, record.id, e.target)} />
+        render: (text, record, index) => (
+          <Input ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.onChangeRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
         ),
       },
       {
         title: 'CURRENCY',
         dataIndex: 'currency',
-        render: (text, record) => (
-          <Input defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.onChangeRecord('currency', e.target.value, record.id, e.target)} />
+        render: (text, record, index) => (
+          <Input ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.onChangeRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
         ),
       },
       {
