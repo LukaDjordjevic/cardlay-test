@@ -46,10 +46,13 @@
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
   height: 80px;
   border-radius: 5px 5px 0 0;
-
+  padding: 10px;
 }
 
 .title {

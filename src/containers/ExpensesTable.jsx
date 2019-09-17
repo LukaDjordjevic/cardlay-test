@@ -15,14 +15,14 @@ class ExpensesTable extends Component {
     })
 
     let sortInfo = localStorage.getItem('sortInfo')
-    let lastPage = localStorage.getItem('lastPage')
+    let currentPage = localStorage.getItem('currentPage')
 
     sortInfo = sortInfo ? JSON.parse(localStorage.getItem('sortInfo')) : {}
-    lastPage = lastPage ? JSON.parse(lastPage) : 1
+    currentPage = currentPage ? JSON.parse(currentPage) : 1
 
     this.state = {
       dataSource,
-      currentPage: lastPage,
+      currentPage,
       sortInfo,
     }
 
@@ -58,7 +58,7 @@ class ExpensesTable extends Component {
   handleChange(pagination, _, sorter) {
     this.setState({ sortInfo: sorter, currentPage: pagination.current })
     localStorage.setItem('sortInfo', JSON.stringify(sorter))
-    localStorage.setItem('lastPage', JSON.stringify(pagination.current))
+    localStorage.setItem('currentPage', JSON.stringify(pagination.current))
   }
 
   render() {
