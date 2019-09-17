@@ -8,7 +8,7 @@ export const expenses = [
     categoryName: "Food",
     parentId: null,
     status: {
-      stage: "Submitted"
+      stage: "Not Submitted"
     },
   },
   {

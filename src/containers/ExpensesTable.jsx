@@ -1,6 +1,18 @@
 import React, { Component } from 'react'
 import { Table, Select, Input } from 'antd'
 import { expenses, categories } from '../expenses'
+import ApproveDecline from '../components/ApproveDecline'
+import merchant0 from '../assets/merchants/merchant0.png'
+import merchant1 from '../assets/merchants/merchant1.png'
+import merchant2 from '../assets/merchants/merchant2.png'
+import merchant3 from '../assets/merchants/merchant3.png'
+import merchant4 from '../assets/merchants/merchant4.png'
+import merchant5 from '../assets/merchants/merchant5.png'
+import merchant6 from '../assets/merchants/merchant6.png'
+import merchant7 from '../assets/merchants/merchant7.png'
+import merchant8 from '../assets/merchants/merchant8.png'
+import merchant9 from '../assets/merchants/merchant9.png'
+import merchant10 from '../assets/merchants/merchant10.png'
 
 class ExpensesTable extends Component {
   constructor(props) {
@@ -25,9 +37,23 @@ class ExpensesTable extends Component {
       currentPage,
       sortInfo,
     }
+    this.merchantLogos = [
+      <img src={merchant0} alt="" width="40px" height="40px" />,
+      <img src={merchant1} alt="" width="40px" height="40px" />,
+      <img src={merchant2} alt="" width="40px" height="40px" />,
+      <img src={merchant3} alt="" width="40px" height="40px" />,
+      <img src={merchant4} alt="" width="40px" height="40px" />,
+      <img src={merchant5} alt="" width="40px" height="40px" />,
+      <img src={merchant6} alt="" width="40px" height="40px" />,
+      <img src={merchant7} alt="" width="40px" height="40px" />,
+      <img src={merchant8} alt="" width="40px" height="40px" />,
+      <img src={merchant9} alt="" width="40px" height="40px" />,
+      <img src={merchant10} alt="" width="40px" height="40px" />,
+
+    ]
 
     this.handleChange = this.handleChange.bind(this)
-    // this.onChangeRecord = this.onChangeRecord.bind(this)
+    this.onChangeRecord = this.onChangeRecord.bind(this)
   }
 
   componentDidMount() {
@@ -80,7 +106,10 @@ class ExpensesTable extends Component {
         sorter: (a, b) => a.merchant.localeCompare(b.merchant),
         sortOrder: sortInfo.columnKey === 'merchant' && sortInfo.order,
         render: (text, record, index) => (
-          <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
+          <div className="flex-row">
+            {this.merchantLogos[Math.floor(Math.random() * 10)]}
+            <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
+          </div>
         ),
       },
       {
@@ -116,6 +145,9 @@ class ExpensesTable extends Component {
       {
         title: 'STATUS',
         dataIndex: 'status',
+        render: (text, record, index) => (
+          record.status === 'Submitted' ? <ApproveDecline id={record.id} approved={record.approved} updateRecord={this.onChangeRecord} /> : text
+        ),
       },
     ]
     return (
