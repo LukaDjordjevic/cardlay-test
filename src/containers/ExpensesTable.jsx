@@ -15,14 +15,14 @@ class ExpensesTable extends Component {
     })
 
     let sortInfo = localStorage.getItem('sortInfo')
-    this.lastPage = localStorage.getItem('lastPage')
+    let lastPage = localStorage.getItem('lastPage')
 
     sortInfo = sortInfo ? JSON.parse(localStorage.getItem('sortInfo')) : {}
-    this.lastPage = this.lastPage ? JSON.parse(this.lastPage) : 1
+    lastPage = lastPage ? JSON.parse(lastPage) : 1
 
     this.state = {
       dataSource,
-      currentPage: this.lastPage,
+      currentPage: lastPage,
       sortInfo,
     }
 
@@ -36,9 +36,9 @@ class ExpensesTable extends Component {
   onChangeRecord(column, value, id, element, originalValue) {
     console.log(column, value, id, element, originalValue)
     let allowUpdate = true
-    switch(column) {
+    switch (column) {
       case 'amount':
-        allowUpdate = /^\d+(.\d+)?$/.test(value)
+        allowUpdate = /^\d+(\.\d+)?$/.test(value)
         break
       default:
     }
@@ -46,13 +46,13 @@ class ExpensesTable extends Component {
     const expenseRecord = dataSource.find((record) => record.id === id)
     const newValue = allowUpdate ? value : originalValue
     expenseRecord[column] = newValue
-    if (element) element.setState({ value: newValue })
+    if (element) element.setState({ value: newValue }) // Update input field
     dataSource.findIndex((record) => record.id === id)
-    const updatedExpenses = dataSource.map((record) => ({ ...record }))
-    updatedExpenses[dataSource.findIndex((record) => record.id === id)] = expenseRecord
+    const updatedExpenses = dataSource.map((record) => ({ ...record })) // Copy records from state
+    updatedExpenses[dataSource.findIndex((record) => record.id === id)] = expenseRecord // Update with new value
     this.setState({ dataSource: updatedExpenses })
-    localStorage.expenseRecords = JSON.stringify(updatedExpenses)
-    if (element) element.blur()
+    localStorage.expenseRecords = JSON.stringify(updatedExpenses) // Save to local storage
+    if (element) element.blur() // Defocus input element
   }
 
   handleChange(pagination, _, sorter) {
@@ -119,12 +119,12 @@ class ExpensesTable extends Component {
       },
     ]
     return (
-      <div>
+      <div className="table">
         <Table
           rowKey="id"
           dataSource={dataSource}
           columns={columns}
-          pagination={{ pageSize: 10, current: currentPage }}
+          pagination={{ pageSize: 10, current: currentPage, style: { display: 'flex', justifyContent: 'center', float: 'none' } }}
           onChange={this.handleChange}
         />
       </div>
