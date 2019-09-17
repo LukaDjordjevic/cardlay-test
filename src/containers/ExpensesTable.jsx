@@ -17,7 +17,6 @@ import merchant10 from '../assets/merchants/merchant10.png'
 class ExpensesTable extends Component {
   constructor(props) {
     super(props)
-
     const savedExpenses = localStorage.expenseRecords ? JSON.parse(localStorage.expenseRecords) : null
 
     const dataSource = savedExpenses || expenses.map((item) => {
@@ -49,7 +48,6 @@ class ExpensesTable extends Component {
       <img src={merchant8} alt="" width="40px" height="40px" />,
       <img src={merchant9} alt="" width="40px" height="40px" />,
       <img src={merchant10} alt="" width="40px" height="40px" />,
-
     ]
 
     this.handleChange = this.handleChange.bind(this)
@@ -107,7 +105,7 @@ class ExpensesTable extends Component {
         sortOrder: sortInfo.columnKey === 'merchant' && sortInfo.order,
         render: (text, record, index) => (
           <div className="flex-row">
-            {this.merchantLogos[Math.floor(Math.random() * 10)]}
+            {this.merchantLogos[index]}
             <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
           </div>
         ),
@@ -132,14 +130,14 @@ class ExpensesTable extends Component {
         sorter: (a, b) => a.amount - b.amount,
         sortOrder: sortInfo.columnKey === 'amount' && sortInfo.order,
         render: (text, record, index) => (
-          <Input ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.onChangeRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
+          <Input className="bold-text" ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.onChangeRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
         ),
       },
       {
         title: 'CURRENCY',
         dataIndex: 'currency',
         render: (text, record, index) => (
-          <Input ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.onChangeRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
+          <Input className="bold-text" ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.onChangeRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
         ),
       },
       {
@@ -154,9 +152,10 @@ class ExpensesTable extends Component {
       <div className="table">
         <Table
           rowKey="id"
+          rowClassName={(record, index) => { if (index % 2 === 0) return 'light-row'; return 'dark-row' }}
           dataSource={dataSource}
           columns={columns}
-          pagination={{ pageSize: 10, current: currentPage, style: { display: 'flex', justifyContent: 'center', float: 'none' } }}
+          pagination={{ pageSize: 8, current: currentPage, style: { display: 'flex', justifyContent: 'center', float: 'none' } }}
           onChange={this.handleChange}
         />
       </div>

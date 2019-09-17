@@ -10,6 +10,12 @@ function App() {
       <div className="content">
         <div className="header">
           <img src={cardlayLogo} alt="" />
+          <div className="flex-row" style={{ width: '380px' }}>
+            <div className="long-line" />
+            <div className="short-line" style={{ backgroundColor: '#0272E1'}}/>
+            <div className="long-line" />
+            <div className="circle" />
+          </div>
         </div>
         <div className="title"><p className="title-text">Expenses</p></div>
         <ExpensesTable />
