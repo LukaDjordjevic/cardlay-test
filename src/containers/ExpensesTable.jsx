@@ -35,6 +35,7 @@ class ExpensesTable extends Component {
       dataSource,
       currentPage,
       sortInfo,
+      activeCell: { column: null, index: null },
     }
     this.merchantLogos = [
       <img src={merchant0} alt="" width="40px" height="40px" />,
@@ -87,7 +88,7 @@ class ExpensesTable extends Component {
 
   render() {
     console.log('render')
-    const { dataSource, sortInfo, currentPage } = this.state
+    const { dataSource, sortInfo, currentPage, activeCell } = this.state
     const { Option } = Select
     const columns = [
       {
@@ -103,25 +104,49 @@ class ExpensesTable extends Component {
         dataIndex: 'merchant',
         sorter: (a, b) => a.merchant.localeCompare(b.merchant),
         sortOrder: sortInfo.columnKey === 'merchant' && sortInfo.order,
-        render: (text, record, index) => (
-          <div className="flex-row">
-            {this.merchantLogos[index]}
-            <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.updateRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
-          </div>
-        ),
+        render: (text, record, index) => {
+          if (activeCell.column === 'merchant' && activeCell.index === index) {
+            return (
+              <div className="flex-row">
+                {this.merchantLogos[index]}
+                <Input
+                  ref={(e) => { this[`merchant${index}`] = e }}
+                  defaultValue={text}
+                  style={{ width: '140px' }}
+                  onPressEnter={(e) => this.updateRecord('merchant', e.target.value, record.id, this[`merchant${index}`])}
+                />
+              </div>
+            )
+          }
+          return (
+            <div className="flex-row">
+              {this.merchantLogos[index]}
+              <div className="default-cell" style={{ width: '140px' }} onMouseEnter={() => { this.setState({ activeCell: { column: 'merchant', index } }) }}>{text}</div>
+            </div>
+          )
+        },
       },
       {
         title: 'CATEGORY',
         dataIndex: 'categoryName',
         sorter: (a, b) => a.categoryName.localeCompare(b.categoryName),
         sortOrder: sortInfo.columnKey === 'categoryName' && sortInfo.order,
-        render: (text, record) => {
+        render: (text, record, index) => {
           const options = categories.map((category) => <Option key={category} value={category}>{category}</Option>)
-          return (
-            <Select defaultValue={text} style={{ width: 180 }} onChange={(value) => this.updateRecord('categoryName', value, record.id)}>
-              {options}
-            </Select>
-          )
+          if (activeCell.column === 'categoryName' && activeCell.index === index) {
+            return (
+              <Select
+                defaultValue={text}
+                style={{ width: 180 }}
+                onMouseEnter={() => { this.setState({ activeCell: { column: 'categoryName', index } }) }}
+                // onMouseLeave={() => this.setState({ activeCell: { column: null, index: null } })}
+                onChange={(value) => this.updateRecord('categoryName', value, record.id)}
+              >
+                {options}
+              </Select>
+            )
+          }
+          return <div className="default-cell" style={{ width: '180px' }} onMouseEnter={() => { this.setState({ activeCell: { column: 'categoryName', index } }) }}>{text}</div>
         },
       },
       {
@@ -129,16 +154,38 @@ class ExpensesTable extends Component {
         dataIndex: 'amount',
         sorter: (a, b) => a.amount - b.amount,
         sortOrder: sortInfo.columnKey === 'amount' && sortInfo.order,
-        render: (text, record, index) => (
-          <Input className="bold-text" ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.updateRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
-        ),
+        render: (text, record, index) => {
+          if (activeCell.column === 'amount' && activeCell.index === index) {
+            return (
+              <Input
+                className="bold-text"
+                ref={(e) => { this[`amount${index}`] = e }}
+                defaultValue={text}
+                style={{ width: '80px' }}
+                onPressEnter={(e) => this.updateRecord('amount', e.target.value, record.id, this[`amount${index}`], text)}
+              />
+            )
+          }
+          return <div className="bold-cell" style={{ width: '80px' }} onMouseEnter={() => { this.setState({ activeCell: { column: 'amount', index } }) }}>{text}</div>
+        },
       },
       {
         title: 'CURRENCY',
         dataIndex: 'currency',
-        render: (text, record, index) => (
-          <Input className="bold-text" ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.updateRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
-        ),
+        render: (text, record, index) => {
+          if (activeCell.column === 'currency' && activeCell.index === index) {
+            return (
+              <Input
+                className="bold-text"
+                ref={(e) => { this[`currency${index}`] = e }}
+                defaultValue={text}
+                style={{ width: '60px' }}
+                onPressEnter={(e) => this.updateRecord('currency', e.target.value, record.id, this[`currency${index}`])}
+              />
+            )
+          }
+          return <div className="bold-cell" onMouseEnter={() => { this.setState({ activeCell: { column: 'currency', index } }) }}>{text}</div>
+        },
       },
       {
         title: 'STATUS',
@@ -149,7 +196,7 @@ class ExpensesTable extends Component {
       },
     ]
     return (
-      <div className="table">
+      <div className="table" onMouseLeave={() => this.setState({ activeCell: { column: null, index: null } })}>
         <Table
           rowKey="id"
           rowClassName={(record, index) => { if (index % 2 === 0) return 'light-row'; return 'dark-row' }}

@@ -40,6 +40,7 @@ exports[`ApproveDecline renders correctly 1`] = `
 exports[`ExpensesTable renders correctly 1`] = `
 <div
   className="table"
+  onMouseLeave={[Function]}
 >
   <div
     className="ant-table-wrapper"
@@ -414,97 +415,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant0.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="vitales"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Food"
-                            >
-                              Food
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          vitales
                         </div>
                       </div>
                     </td>
@@ -512,35 +432,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Food
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={1324}
-                      />
+                      >
+                        1324
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="DKK"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        DKK
+                      </div>
                     </td>
                     <td
                       className=""
@@ -582,97 +511,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant1.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="parking1"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Parking"
-                            >
-                              Parking
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          parking1
                         </div>
                       </div>
                     </td>
@@ -680,35 +528,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Parking
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={179}
-                      />
+                      >
+                        179
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -783,97 +640,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant2.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="kronetaxa"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Transport"
-                            >
-                              Transport
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          kronetaxa
                         </div>
                       </div>
                     </td>
@@ -881,35 +657,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Transport
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={55}
-                      />
+                      >
+                        55
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -984,97 +769,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant3.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="charlies"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Car Rental"
-                            >
-                              Car Rental
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          charlies
                         </div>
                       </div>
                     </td>
@@ -1082,35 +786,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Car Rental
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={111}
-                      />
+                      >
+                        111
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -1185,97 +898,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant4.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="fuelandfood"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Food"
-                            >
-                              Food
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          fuelandfood
                         </div>
                       </div>
                     </td>
@@ -1283,35 +915,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Food
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={980}
-                      />
+                      >
+                        980
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -1386,97 +1027,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant5.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="mountain"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Hotel & Accomodation"
-                            >
-                              Hotel & Accomodation
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          mountain
                         </div>
                       </div>
                     </td>
@@ -1484,35 +1044,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Hotel & Accomodation
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={1981}
-                      />
+                      >
+                        1981
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="DKK"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        DKK
+                      </div>
                     </td>
                     <td
                       className=""
@@ -1587,97 +1156,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant6.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="meatup"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Food"
-                            >
-                              Food
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          meatup
                         </div>
                       </div>
                     </td>
@@ -1685,35 +1173,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Food
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={100}
-                      />
+                      >
+                        100
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -1788,97 +1285,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant7.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="gasolino"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Food"
-                            >
-                              Food
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          gasolino
                         </div>
                       </div>
                     </td>
@@ -1886,35 +1302,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Food
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={1999.72}
-                      />
+                      >
+                        1999.72
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="DKK"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        DKK
+                      </div>
                     </td>
                     <td
                       className=""
@@ -1989,97 +1414,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant8.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="hotwheel"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Car Rental"
-                            >
-                              Car Rental
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          hotwheel
                         </div>
                       </div>
                     </td>
@@ -2087,35 +1431,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Car Rental
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={179}
-                      />
+                      >
+                        179
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""
@@ -2190,97 +1543,16 @@ exports[`ExpensesTable renders correctly 1`] = `
                           src="merchant9.png"
                           width="40px"
                         />
-                        <input
-                          className="ant-input"
-                          onChange={[Function]}
-                          onKeyDown={[Function]}
+                        <div
+                          className="default-cell"
+                          onMouseEnter={[Function]}
                           style={
                             Object {
                               "width": "140px",
                             }
                           }
-                          type="text"
-                          value="a2b"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      className="ant-table-column-has-actions ant-table-column-has-sorters"
-                      onClick={[Function]}
-                    >
-                      <div
-                        className="ant-select ant-select-enabled"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onFocus={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseOut={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchStart={[Function]}
-                        style={
-                          Object {
-                            "width": 180,
-                          }
-                        }
-                      >
-                        <div
-                          aria-autocomplete="list"
-                          aria-controls="test-uuid"
-                          aria-expanded={false}
-                          aria-haspopup="true"
-                          className="ant-select-selection
-            ant-select-selection--single"
-                          onKeyDown={[Function]}
-                          role="combobox"
-                          tabIndex={0}
                         >
-                          <div
-                            className="ant-select-selection__rendered"
-                          >
-                            <div
-                              className="ant-select-selection-selected-value"
-                              style={
-                                Object {
-                                  "display": "block",
-                                  "opacity": 1,
-                                }
-                              }
-                              title="Transport"
-                            >
-                              Transport
-                            </div>
-                          </div>
-                          <span
-                            className="ant-select-arrow"
-                            onClick={[Function]}
-                            style={
-                              Object {
-                                "WebkitUserSelect": "none",
-                                "userSelect": "none",
-                              }
-                            }
-                            unselectable="on"
-                          >
-                            <i
-                              aria-label="icon: down"
-                              className="anticon anticon-down ant-select-arrow-icon"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                className=""
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </i>
-                          </span>
+                          a2b
                         </div>
                       </div>
                     </td>
@@ -2288,35 +1560,44 @@ exports[`ExpensesTable renders correctly 1`] = `
                       className="ant-table-column-has-actions ant-table-column-has-sorters"
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
+                      <div
+                        className="default-cell"
+                        onMouseEnter={[Function]}
+                        style={
+                          Object {
+                            "width": "180px",
+                          }
+                        }
+                      >
+                        Transport
+                      </div>
+                    </td>
+                    <td
+                      className="ant-table-column-has-actions ant-table-column-has-sorters"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
                         style={
                           Object {
                             "width": "80px",
                           }
                         }
-                        type="text"
-                        value={179}
-                      />
+                      >
+                        179
+                      </div>
                     </td>
                     <td
                       className=""
                       onClick={[Function]}
                     >
-                      <input
-                        className="ant-input bold-text"
-                        onChange={[Function]}
-                        onKeyDown={[Function]}
-                        style={
-                          Object {
-                            "width": "60px",
-                          }
-                        }
-                        type="text"
-                        value="Euro"
-                      />
+                      <div
+                        className="bold-cell"
+                        onMouseEnter={[Function]}
+                      >
+                        Euro
+                      </div>
                     </td>
                     <td
                       className=""

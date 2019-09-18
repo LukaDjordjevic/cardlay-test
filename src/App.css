@@ -79,6 +79,15 @@ body {
   font-weight: bold;
 }
 
+.default-cell {
+  padding-left: 12px;
+}
+
+.bold-cell {
+  padding-left: 12px;
+  font-weight: bold;
+}
+
 .long-line {
   width: 100px;
   height: 6px;
