@@ -51,13 +51,13 @@ class ExpensesTable extends Component {
     ]
 
     this.handleChange = this.handleChange.bind(this)
-    this.onChangeRecord = this.onChangeRecord.bind(this)
+    this.updateRecord = this.updateRecord.bind(this)
   }
 
   componentDidMount() {
   }
 
-  onChangeRecord(column, value, id, element, originalValue) {
+  updateRecord(column, value, id, element, originalValue) {
     console.log(column, value, id, element, originalValue)
     let allowUpdate = true
     switch (column) {
@@ -106,7 +106,7 @@ class ExpensesTable extends Component {
         render: (text, record, index) => (
           <div className="flex-row">
             {this.merchantLogos[index]}
-            <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.onChangeRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
+            <Input ref={(e) => { this[`merchant${index}`] = e }} defaultValue={text} style={{ width: '140px' }} onPressEnter={(e) => this.updateRecord('merchant', e.target.value, record.id, this[`merchant${index}`])} />
           </div>
         ),
       },
@@ -118,7 +118,7 @@ class ExpensesTable extends Component {
         render: (text, record) => {
           const options = categories.map((category) => <Option key={category} value={category}>{category}</Option>)
           return (
-            <Select defaultValue={text} style={{ width: 180 }} onChange={(value) => this.onChangeRecord('categoryName', value, record.id)}>
+            <Select defaultValue={text} style={{ width: 180 }} onChange={(value) => this.updateRecord('categoryName', value, record.id)}>
               {options}
             </Select>
           )
@@ -130,21 +130,21 @@ class ExpensesTable extends Component {
         sorter: (a, b) => a.amount - b.amount,
         sortOrder: sortInfo.columnKey === 'amount' && sortInfo.order,
         render: (text, record, index) => (
-          <Input className="bold-text" ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.onChangeRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
+          <Input className="bold-text" ref={(e) => { this[`amount${index}`] = e }} defaultValue={text} style={{ width: '80px' }} onPressEnter={(e) => this.updateRecord('amount', e.target.value, record.id, this[`amount${index}`], text)} />
         ),
       },
       {
         title: 'CURRENCY',
         dataIndex: 'currency',
         render: (text, record, index) => (
-          <Input className="bold-text" ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.onChangeRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
+          <Input className="bold-text" ref={(e) => { this[`currency${index}`] = e }} defaultValue={text} style={{ width: '60px' }} onPressEnter={(e) => this.updateRecord('currency', e.target.value, record.id, this[`currency${index}`])} />
         ),
       },
       {
         title: 'STATUS',
         dataIndex: 'status',
         render: (text, record, index) => (
-          record.status === 'Submitted' ? <ApproveDecline id={record.id} approved={record.approved} updateRecord={this.onChangeRecord} /> : text
+          record.status === 'Submitted' ? <ApproveDecline id={record.id} approved={record.approved} updateRecord={this.updateRecord} /> : text
         ),
       },
     ]
@@ -155,7 +155,7 @@ class ExpensesTable extends Component {
           rowClassName={(record, index) => { if (index % 2 === 0) return 'light-row'; return 'dark-row' }}
           dataSource={dataSource}
           columns={columns}
-          pagination={{ pageSize: 8, current: currentPage, style: { display: 'flex', justifyContent: 'center', float: 'none' } }}
+          pagination={{ pageSize: 10, current: currentPage, style: { display: 'flex', justifyContent: 'center', float: 'none' } }}
           onChange={this.handleChange}
         />
       </div>

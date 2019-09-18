@@ -13,8 +13,32 @@ function ApproveDecline({ approved, id, updateRecord }) {
   const declineCursor = approved === false ? 'default' : 'pointer'
   return (
     <div className="ApproveDecline">
-      <div className="round-button" onClick={() => updateRecord('approved', true, id)} style={{ backgroundColor: approveBgdColor, color: approveColor, cursor: approveCursor }}>{approveText}</div>
-      <div className="round-button" onClick={() => updateRecord('approved', false, id)} style={{ backgroundColor: declineBgdColor, color: declineColor, cursor: declineCursor }}>{declineText}</div>
+      <button
+        type="button"
+        className="round-button"
+        onClick={() => updateRecord('approved', true, id)}
+        style={{
+          backgroundColor: approveBgdColor,
+          color: approveColor,
+          cursor: approveCursor,
+          padding: '0 7px',
+        }}
+      >
+        {approveText}
+      </button>
+      <button
+        type="button"
+        className="round-button"
+        onClick={() => updateRecord('approved', false, id)}
+        style={{
+          backgroundColor: declineBgdColor,
+          color: declineColor,
+          cursor: declineCursor,
+          padding: '0 7px',
+        }}
+      >
+        {declineText}
+      </button>
     </div>
   )
 }

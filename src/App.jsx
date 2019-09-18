@@ -12,7 +12,7 @@ function App() {
           <img src={cardlayLogo} alt="" />
           <div className="flex-row" style={{ width: '380px' }}>
             <div className="long-line" />
-            <div className="short-line" style={{ backgroundColor: '#0272E1'}}/>
+            <div className="short-line" style={{ backgroundColor: '#0272E1' }} />
             <div className="long-line" />
             <div className="circle" />
           </div>
