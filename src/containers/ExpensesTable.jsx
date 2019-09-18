@@ -18,7 +18,6 @@ class ExpensesTable extends Component {
   constructor(props) {
     super(props)
     const savedExpenses = localStorage.expenseRecords ? JSON.parse(localStorage.expenseRecords) : null
-
     const dataSource = savedExpenses || expenses.map((item) => {
       const newItem = { ...item }
       newItem.status = item.status.stage
@@ -37,6 +36,7 @@ class ExpensesTable extends Component {
       sortInfo,
       activeCell: { column: null, index: null },
     }
+
     this.merchantLogos = [
       <img src={merchant0} alt="" width="40px" height="40px" />,
       <img src={merchant1} alt="" width="40px" height="40px" />,
@@ -55,11 +55,7 @@ class ExpensesTable extends Component {
     this.updateRecord = this.updateRecord.bind(this)
   }
 
-  componentDidMount() {
-  }
-
   updateRecord(column, value, id, element, originalValue) {
-    console.log(column, value, id, element, originalValue)
     let allowUpdate = true
     switch (column) {
       case 'amount':
@@ -139,7 +135,6 @@ class ExpensesTable extends Component {
                 defaultValue={text}
                 style={{ width: 180 }}
                 onMouseEnter={() => { this.setState({ activeCell: { column: 'categoryName', index } }) }}
-                // onMouseLeave={() => this.setState({ activeCell: { column: null, index: null } })}
                 onChange={(value) => this.updateRecord('categoryName', value, record.id)}
               >
                 {options}
@@ -190,7 +185,7 @@ class ExpensesTable extends Component {
       {
         title: 'STATUS',
         dataIndex: 'status',
-        render: (text, record, index) => (
+        render: (text, record) => (
           record.status === 'Submitted' ? <ApproveDecline id={record.id} approved={record.approved} updateRecord={this.updateRecord} /> : text
         ),
       },

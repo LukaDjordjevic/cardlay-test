@@ -4,7 +4,6 @@ import { create } from 'react-test-renderer'
 import App from './App'
 import ApproveDecline from './components/ApproveDecline'
 import ExpensesTable from './containers/ExpensesTable'
-import { expenses } from './expenses'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
