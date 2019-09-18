@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import renderer from 'react-test-renderer'
+import { create } from 'react-test-renderer'
 import App from './App'
 import ApproveDecline from './components/ApproveDecline'
 import ExpensesTable from './containers/ExpensesTable'
+import { expenses } from './expenses'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
@@ -11,12 +12,46 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div)
 })
 
-it('renders correctly', () => {
-  const tree = renderer.create(<ApproveDecline approved id="1234" updateRecord={() => {}} />).toJSON()
-  expect(tree).toMatchSnapshot()
+describe('ExpensesTable', () => {
+  it('renders correctly', () => {
+    const tree = create(<ExpensesTable />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+  it('renders between 1 and 10 table rows', () => {
+    const component = create(<ExpensesTable />)
+    const instance = component.getInstance()
+    const root = component.root
+    instance.setState({ currentPage: 1 })
+    const rowsNum = root.findAllByType('tr').length
+    expect(rowsNum).toBeGreaterThan(1) // Includes table header row
+    expect(rowsNum).toBeLessThan(12)
+  })
 })
 
-it('renders correctly', () => {
-  const tree = renderer.create(<ExpensesTable />).toJSON()
-  expect(tree).toMatchSnapshot()
+describe('ApproveDecline', () => {
+  const props = { id: '', updateRecord: () => {} }
+  it('renders correctly', () => {
+    const component = create(<ApproveDecline { ...props } />).toJSON()
+    expect(component).toMatchSnapshot()
+  })
+  it('it shows correct text in buttons', () => {
+    let component = create(<ApproveDecline approved { ...props } />)
+    let { root } = component
+    let button1 = root.findAllByType('button')[0]
+    let button2 = root.findAllByType('button')[1]
+    expect(button1.props.children).toBe('Approved')
+    expect(button2.props.children).toBe('Decline')
+    component = create(<ApproveDecline approved={undefined} { ...props } />)
+    root = component.root
+    button1 = root.findAllByType('button')[0]
+    button2 = root.findAllByType('button')[1]
+    expect(button1.props.children).toBe('Approve')
+    expect(button2.props.children).toBe('Decline')
+    component = create(<ApproveDecline approved={false} { ...props } />)
+    root = component.root
+    button1 = root.findAllByType('button')[0]
+    button2 = root.findAllByType('button')[1]
+    expect(button1.props.children).toBe('Approve')
+    expect(button2.props.children).toBe('Declined')
+  })
 })

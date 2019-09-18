@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`ApproveDecline renders correctly 1`] = `
 <div
   className="ApproveDecline"
 >
@@ -9,15 +9,15 @@ exports[`renders correctly 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "#6ADDB4",
-        "color": "white",
-        "cursor": "default",
+        "backgroundColor": "#F3F4F4",
+        "color": "black",
+        "cursor": "pointer",
         "padding": "0 7px",
       }
     }
     type="button"
   >
-    Approved
+    Approve
   </button>
   <button
     className="round-button"
@@ -37,7 +37,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders correctly 2`] = `
+exports[`ExpensesTable renders correctly 1`] = `
 <div
   className="table"
 >
