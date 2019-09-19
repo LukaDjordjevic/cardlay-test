@@ -17,6 +17,7 @@ import merchant10 from '../assets/merchants/merchant10.png'
 class ExpensesTable extends Component {
   constructor(props) {
     super(props)
+
     const savedExpenses = localStorage.expenseRecords ? JSON.parse(localStorage.expenseRecords) : null
     const dataSource = savedExpenses || expenses.map((item) => {
       const newItem = { ...item }
@@ -55,12 +56,12 @@ class ExpensesTable extends Component {
     this.updateRecord = this.updateRecord.bind(this)
   }
 
-  // Updates values entered by user in state and localStorage
+  // Updates user entered values in state and localStorage
   updateRecord(column, value, id, element, originalValue) {
     let allowUpdate = true
     switch (column) {
       case 'amount':
-        allowUpdate = /^\d+(\.\d+)?$/.test(value)
+        allowUpdate = /^\d+(\.\d+)?$/.test(value) // Allows only numbers with optional decimal values
         break
       default:
     }
@@ -190,6 +191,7 @@ class ExpensesTable extends Component {
         ),
       },
     ]
+
     return (
       <div className="table" onMouseLeave={() => this.setState({ activeCell: { column: null, index: null } })}>
         <Table
