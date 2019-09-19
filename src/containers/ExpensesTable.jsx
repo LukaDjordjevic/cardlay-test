@@ -55,6 +55,7 @@ class ExpensesTable extends Component {
     this.updateRecord = this.updateRecord.bind(this)
   }
 
+  // Updates values entered by user in state and localStorage
   updateRecord(column, value, id, element, originalValue) {
     let allowUpdate = true
     switch (column) {
@@ -71,11 +72,11 @@ class ExpensesTable extends Component {
     dataSource.findIndex((record) => record.id === id)
     const updatedExpenses = dataSource.map((record) => ({ ...record })) // Copy records from state
     updatedExpenses[dataSource.findIndex((record) => record.id === id)] = expenseRecord // Update with new value
-    this.setState({ dataSource: updatedExpenses })
+    this.setState({ dataSource: updatedExpenses, activeCell: { column: null, index: null } })
     localStorage.expenseRecords = JSON.stringify(updatedExpenses) // Save to local storage
-    if (element) element.blur() // Defocus input element
   }
 
+  // Triggered when table pagination or sorting order is changed
   handleChange(pagination, _, sorter) {
     this.setState({ sortInfo: sorter, currentPage: pagination.current })
     localStorage.setItem('sortInfo', JSON.stringify(sorter))
@@ -83,7 +84,6 @@ class ExpensesTable extends Component {
   }
 
   render() {
-    console.log('render')
     const { dataSource, sortInfo, currentPage, activeCell } = this.state
     const { Option } = Select
     const columns = [

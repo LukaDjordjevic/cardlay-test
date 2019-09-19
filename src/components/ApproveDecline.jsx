@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Button } from 'antd'
 
 function ApproveDecline({ approved, id, updateRecord }) {
   const approveText = approved === true ? 'Approved' : 'Approve'
